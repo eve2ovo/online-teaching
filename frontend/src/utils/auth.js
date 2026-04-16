@@ -1,0 +1,11 @@
+const TOKEN_KEY = 'token';
+const USER_KEY = 'user';
+export const getToken = () => localStorage.getItem(TOKEN_KEY) || '';
+export const setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
+export const clearToken = () => localStorage.removeItem(TOKEN_KEY);
+export const setUserCache = (user) => localStorage.setItem(USER_KEY, JSON.stringify(user));
+export const getUserCache = () => {
+    const raw = localStorage.getItem(USER_KEY);
+    return raw ? JSON.parse(raw) : null;
+};
+export const clearUserCache = () => localStorage.removeItem(USER_KEY);

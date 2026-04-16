@@ -1,0 +1,20 @@
+# Logs and archives
+*.log
+*.zip
+.DS_Store
+
+# IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+
+# Backend build and local runtime data
+backend/target/
+backend/.m2/
+backend/.m2repo/
+backend/uploads/

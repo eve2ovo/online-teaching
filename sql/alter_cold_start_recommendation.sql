@@ -1,0 +1,6 @@
+ALTER TABLE sys_user
+  ADD COLUMN major_direction VARCHAR(100) DEFAULT NULL AFTER phone,
+  ADD COLUMN interest_tags VARCHAR(255) DEFAULT NULL AFTER major_direction;
+
+ALTER TABLE course
+  ADD COLUMN tags VARCHAR(255) DEFAULT NULL AFTER cover_url;

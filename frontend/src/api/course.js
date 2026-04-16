@@ -1,0 +1,18 @@
+import request from '@/utils/request';
+export const getTeacherCoursesApi = (params) => request.get('/teacher/courses', { params });
+export const getTeacherCourseDetailApi = (id) => request.get(`/teacher/courses/${id}`);
+export const getTeacherCourseStudentsApi = (id, params) => request.get(`/teacher/courses/${id}/students`, { params });
+export const removeTeacherCourseStudentApi = (courseId, studentId, data) => request.post(`/teacher/courses/${courseId}/students/${studentId}/remove`, data);
+export const getTeacherCourseGradebookApi = (id, params) => request.get(`/teacher/courses/${id}/gradebook`, { params });
+export const saveCourseApi = (data) => request.post('/teacher/courses', data);
+export const submitCourseAuditApi = (id) => request.post(`/teacher/courses/${id}/submit-audit`);
+export const deleteCourseApi = (id) => request.delete(`/teacher/courses/${id}`);
+export const getStudentCoursesApi = (params) => request.get('/student/courses', { params });
+export const getCourseDetailApi = (id) => request.get(`/student/courses/${id}`);
+export const getSimilarCoursesApi = (id, limit = 4) => request.get(`/student/courses/${id}/similar`, { params: { limit } });
+export const getStudentLearnDetailApi = (id) => request.get(`/student/courses/learn-detail/${id}`);
+export const getAdminCoursesApi = (params) => request.get('/admin/courses', { params });
+export const getAdminCourseDetailApi = (id) => request.get(`/admin/courses/${id}`);
+export const auditCourseApi = (id, data) => request.post(`/admin/courses/${id}/audit`, data);
+export const getMyLearningCoursesApi = () => request.get('/student/courses/learning');
+export const getRecommendedCoursesApi = (params) => request.get('/student/courses/recommend', { params: { limit: 6, ...params } });
